@@ -1,7 +1,5 @@
 package com.youtube.ecommerce.entity;
 
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-
 import javax.persistence.*;
 
 @Entity
