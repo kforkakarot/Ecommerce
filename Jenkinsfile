@@ -1,5 +1,4 @@
-pipeline {
-    node('ec2'){
+node('ec2'){
         stages {
             stage('Checkout') {
                 steps{
@@ -41,5 +40,4 @@ pipeline {
             }
         }
 
-    }
 }
