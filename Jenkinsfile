@@ -3,24 +3,34 @@ pipeline {
     
     stages {
         stage('Checkout') {
-            sh 'echo checkout'
+            steps{
+                sh 'echo checkout'
+            }
         }
         
         stage('Build') {
-            sh 'echo build'
+            steps{
+                sh 'echo build'
+            }
         }
         
         stage('Deploy') {
-            sh 'echo deploy'
+            steps{
+                sh 'echo deploy'
+            }
         }
     }
     
     post {
         success {
-            sh 'echo Success'
+            steps{
+                sh 'echo success'
             }
+        }
         failure {
-            sh 'echo Failure'
+            steps{
+                sh 'echo fail'
             }
+        }
     }
 }
