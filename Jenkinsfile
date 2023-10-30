@@ -4,13 +4,25 @@ pipeline {
     stages {
         stage('Checkout') {
             steps{
-                sh 'echo checkout'
+                dir("files"){
+                        script {
+                        checkout([$class: 'GitSCM', 
+                            branches: [[name: '*/main']],
+                            doGenerateSubmoduleConfigurations: false,
+                            extensions: [[$class: 'CleanCheckout'], [$class: 'CloneOption', shallow: true, noTags: true, reference: '', timeout: 10]],
+                            userRemoteConfigs: [[url: 'https://github.com/kforkakarot/Ecommerce.git']]
+                        ])
+                    }
+                }
             }
         }
         
         stage('Build') {
             steps{
-                sh 'echo build'
+                dir("files")
+                {
+                    sh "ls"
+                }
             }
         }
         
