@@ -3,21 +3,15 @@ pipeline {
     
     stages {
         stage('Checkout') {
-            steps {
-                sh 'echo checking out'
-            }
+            sh 'echo checkout'
         }
         
         stage('Build') {
-            steps {
-                sh 'echo Building'
-                }
+            sh 'echo build'
         }
         
         stage('Deploy') {
-            steps {
-                sh 'echo deploying'
-                }
+            sh 'echo deploy'
         }
     }
     
